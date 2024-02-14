@@ -21,9 +21,7 @@ pipeline {
     }
       post {
             always {
-                  echo 'gkl before publishing html'
                   publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: '', reportFiles: 'Sample_report.html', reportName: 'HTML Report', reportTitles: 'Test report', useWrapperFileDirectly: true])
-                  echo 'gkl after publishing html'
             }
       }
 }
