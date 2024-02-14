@@ -11,7 +11,7 @@ def test_master_referencedata():
 
     test_df1_raw = (jobs.master_referencedata.
                master_referencedata_extract
-               (spark, 'test_data/Policy_Input_data.csv'))
+               (spark, os.getcwd() + '/' + 'Policy_Input_data.csv'))
 
     test_df1_transformed = (jobs.master_referencedata.
                             master_referencedata_transform(test_df1_raw))
@@ -19,7 +19,7 @@ def test_master_referencedata():
 
     expected_df1_raw = (jobs.master_referencedata.
                master_referencedata_extract
-               (spark, 'test_data/Policy_Input_data.csv'))
+               (spark, os.getcwd() + '/' + 'Policy_Input_data.csv'))
 
     expected_df1_transformed = (jobs.master_referencedata.
                             master_referencedata_transform(expected_df1_raw))
