@@ -1,5 +1,9 @@
 FROM ubuntu:18.04
 
+ENV DEBIAN_FRONTEND noninteractive
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
+
 MAINTAINER Gokul Methencheri <mgokulm@gmail.com>
 
 RUN apt-get update
