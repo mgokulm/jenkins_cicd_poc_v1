@@ -19,7 +19,7 @@ def test_master_referencedata():
 
     expected_df1_raw = (jobs.master_referencedata.
                master_referencedata_extract
-               (spark, os.getcwd() + '/' + 'test_data/Policy_Input_data.csv'))
+               (spark, 'test_data/Policy_Input_data.csv'))
 
     expected_df1_transformed = (jobs.master_referencedata.
                             master_referencedata_transform(expected_df1_raw))
@@ -28,8 +28,8 @@ def test_master_referencedata():
 
 conftest.tearDown(spark)
 
-    # return (test_df1_transformed)
-
+#     return (test_df1_transformed)
+#
 # if __name__ == '__main__':
 #     test_df = test_master_referencedata()
 #     print(test_df.show())
