@@ -1,5 +1,4 @@
 import conftest
-import pyspark.pandas as ps
 from pyspark.sql.functions import when
 
 def master_referencedata_extract(spark, input_file):
