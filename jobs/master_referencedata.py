@@ -2,19 +2,11 @@ import conftest
 from pyspark.sql.functions import when
 
 def master_referencedata_extract(spark, input_file):
-    print('gkl in master_referencedata_extract function')
-    print(input_file)
 
     in_df1 = spark.read.csv(input_file, header=True)
-    print(in_df1.show())
-
     return (in_df1)
 
 def master_referencedata_transform(in_df1):
-    print('gkl in master_referencedata_transform function')
-
-    # print(in_df1.head())
-
     in_df1 = (in_df1
               .withColumn("Country",
                           when(in_df1["Country"] == "KOREA", "KOR")
@@ -45,12 +37,4 @@ def master_referencedata_transform(in_df1):
                           .when(in_df1["POLICY_STATUS"].isin(["Cancellation", "Terminated", "INFORCE", "1"]), "I")
                           .otherwise(in_df1["POLICY_STATUS"])))
 
-
-    print('gkl after transformation')
-    print(in_df1.show())
-
     return (in_df1)
-
-
-
-
