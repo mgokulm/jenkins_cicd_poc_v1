@@ -9,19 +9,19 @@ spark = conftest.setUp()
 def test_master_referencedata():
     print("gkl inside test_master_referencedata")
 
-    test_df1_raw = (master_referencedata_extract(spark, os.getcwd() + '/' + 'Policy_Input_data.csv'))
+    test_df1_raw = (master_referencedata_extract(spark, 'Policy_Input_data.csv'))
     test_df1_transformed = (master_referencedata_transform(test_df1_raw))
 
     expected_df1_raw = (master_referencedata_extract(spark,  os.getcwd() + '/' + 'Policy_Input_data.csv'))
     expected_df1_transformed = (master_referencedata_transform(expected_df1_raw))
 
     assert test_df1_transformed.collect() == expected_df1_transformed.collect()
-    return None
+    # return None
 
-conftest.tearDown(spark)
+# conftest.tearDown(spark)
 
-#     return (test_df1_transformed)
-# #
-# if __name__ == '__main__':
-#     test_df = test_master_referencedata()
-#     print(test_df.show())
+    return (test_df1_transformed)
+
+if __name__ == '__main__':
+    test_df = test_master_referencedata()
+    # print(test_df.show())
