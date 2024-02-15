@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'This is the test stage - Test'
-                sh 'pipenv run pytest --html=Sample_report.html'
+                sh 'pipenv run pytest -v --html=Sample_report.html'
             }
         }
         stage('Build') {
