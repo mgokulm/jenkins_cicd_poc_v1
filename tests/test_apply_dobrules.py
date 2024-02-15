@@ -32,6 +32,6 @@ def test_apply_dobrules():
     # print(' ')
 
     # print('Output dataframe')
-    # out_df1 = override_dob_values(in_df1)
+    out_df1 = override_dob_values(in_df1)
     # print(out_df1.show())
 
