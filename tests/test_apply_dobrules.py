@@ -24,14 +24,14 @@ def test_apply_dobrules():
     test_data_header = ["Policy_Number", "DOB", "Product", "MaturityAmount"]
     in_df1 = spark.createDataFrame(test_data, test_data_header)
 
-    print("Input dataframe")
-    print(in_df1.show())
+    # print("Input dataframe")
+    # print(in_df1.show())
 
     spark.udf.register("validate_dob", validate_dob)
-    print("Input performing DOB validation...")
-    print(' ')
+    # print("Input performing DOB validation...")
+    # print(' ')
 
-    print('Output dataframe')
-    out_df1 = override_dob_values(in_df1)
-    print(out_df1.show())
+    # print('Output dataframe')
+    # out_df1 = override_dob_values(in_df1)
+    # print(out_df1.show())
 

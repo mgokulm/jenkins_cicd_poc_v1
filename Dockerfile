@@ -18,5 +18,3 @@ WORKDIR /usr/src/app
 
 RUN useradd jenkins -d /usr/src/app && echo "jenkins:jenkins" | chpasswd
 RUN chown -R jenkins:jenkins /usr/src/app
-
-CMD ["echo", "Hello World...! from my first docker image"]
